@@ -12,6 +12,15 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com"
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "https://github.com/Semifinals",
+        permanent: false
+      }
+    ]
   }
 }
 
