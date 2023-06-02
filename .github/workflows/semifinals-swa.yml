@@ -20,6 +20,10 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@semifinals"
 
+      - run: npm install --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
