@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
 
@@ -20,7 +20,9 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@semifinals"
 
-      - run: npm install --ignore-scripts
+      - run: |
+          npm install --ignore-scripts && npm run build
+          npm prune --production
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -34,3 +36,5 @@ jobs:
           app_location: "/"
           api_location: ""
           output_location: ""
+          skip_app_build: true
+          skip_api_build: true
