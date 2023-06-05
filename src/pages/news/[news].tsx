@@ -61,7 +61,8 @@ export default function News({
       <Head
         title={discussion.title}
         description={description}
-        url={`/news/${slug}`}
+        url={`news/${slug}`}
+        image={"https://cdn.semifinals.co/assets/background.png"}
       />
       <Main>
         <Header />
