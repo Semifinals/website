@@ -28,7 +28,7 @@ export default function Head(props: HeadProps) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={props.description} />
       <meta name="twitter:image" content={props.image} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
     </NextHead>
   )
 }
