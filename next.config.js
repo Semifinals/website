@@ -16,7 +16,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/",
+        source: "/github",
         destination: "https://github.com/Semifinals",
         permanent: false
       }
